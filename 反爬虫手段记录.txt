@@ -1,0 +1,8 @@
+1.检测请求头中的User-Agent是否是一个正常浏览器的User-Agent
+   解决方案：自己设置User-Agent
+   headers = {
+      "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0"
+   }
+2.检测请求的来源(请求头中的Referer属性)(这个请求发送之前打开的是那个页面)------防盗链接
+   解决方案：抓包看一下发送穹丘的啊hi后，浏览器发送的Referer值是什么，然后在代码中的请求头中加入Referer
+   'Referer':"https://passport.china.com/logon"

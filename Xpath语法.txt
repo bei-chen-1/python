@@ -1,0 +1,54 @@
+nodename                  选取此节点的所有节点
+/                         从根节点开始选取
+//                        从当前节点开始选取(跟节点下的所有节点元素)
+.                         选取当前节点
+..                        选取当前节点的父节点
+@                         选取属性
+
+路径表达式：
+div                       选取div元素的所有节点
+/div                      选取div跟元素
+div/a                     选取div元素的子元素a
+//div                     选取所有div子元素
+div//p                    选取div元素的后代的所有div元素
+//@lang                   选取选取名为lang的所有属性
+
+根本用法：
+根节点下(/)有<head>  <body>
+找根节点下的     节点ol      找ol节点下的li节点(//ol/li)
+/              /  ol      /li
+找根节点下的     节点ol       @class属性
+/              /ol        /@class
+找根节点下的     节点ol      找ol节点下的li节点  li节点下的span [过滤条件]
+/              /ol        /li              /     /span[@class="title"]
+
+谓语条件：
+选取属于ul    子元素的第一个  li元素(/ul/li[1])
+/ul            /li        [1]
+找根节点下的     节点ol      找ol节点下的li节点  li节点下的spanspan[@class="title"]的第一个元素
+//ol/li//span[@class="title"][1]
+选取属于/ol   子元素的最后一的  span[@class="title"] 元素
+//ol/li//span[@class="title"][last()]
+选取属于/ol   子元素的倒数第二的  span[@class="title"] 元素
+//ol/li//span[@class="title"][last()-1]
+
+选取未知节点：
+//*[@class="title"]
+选取div元素的所有子元素
+/div*
+选取文档中的所有元素
+//*
+选取html下的任意节点元素
+html/node()/a/@*
+选取带有属性的div元素
+//div[@*]
+
+模糊匹配：
+跟目录下      text文件中包含”当“字的文件
+//*[contains(text(),"当")]
+//*[contains(@属性,值)]
+//*[contains(@attr,200)]
+
+python 中使用xpath
+安装lxml:
+pip instakll lxml

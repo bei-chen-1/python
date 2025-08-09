@@ -1,0 +1,4 @@
+{}                         json对象
+[]                         json数组
+json.loads                 json字符串转换为python字符串
+json.dump                  pyton字符串转换为json字符串

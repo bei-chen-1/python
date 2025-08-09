@@ -1,0 +1,14 @@
+{
+    "name": "张三",
+    "age": "18",
+    "skill": [
+        "python",
+        "html",
+        "css",
+        "js",
+        "java"
+    ],
+    "isDelete": true,
+    "isActive": false,
+    "addr": null
+}
